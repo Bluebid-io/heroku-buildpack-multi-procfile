@@ -22,6 +22,8 @@ fi
 
 ls -l "${BUILD_DIR}"
 ls -l "${BUILD_DIR}/packages"
+ls -l "${BUILD_DIR}/packages/api-server"
+ls "${BUILD_DIR}/packages/api-server/Procfile"
 
 echo "tmp: cp: ${BUILD_DIR}/${PROCFILE} -> ${BUILD_DIR}/Procfile" | indent
 cp "${BUILD_DIR}/${PROCFILE}" "${BUILD_DIR}/Procfile"
