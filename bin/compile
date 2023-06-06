@@ -8,13 +8,19 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+echo "tmp: BUILD_DIR: ${BUILD_DIR}" | indent
+echo "tmp: CACHE_DIR: ${CACHE_DIR}" | indent
+echo "tmp: ENV_DIR: ${ENV_DIR}" | indent
+
 PROCFILE=$(cat "${ENV_DIR}/PROCFILE")
+echo "tmp: PROCFILE: ${PROCFILE}" | indent
 
 if [[ -z "${PROCFILE}" ]]; then
     echo "PROCFILE was not set. Aborting" | indent
     exit 1
 fi
 
+echo "tmp: cp: ${BUILD_DIR}/${PROCFILE} -> ${BUILD_DIR}/Procfile" | indent
 cp "${BUILD_DIR}/${PROCFILE}" "${BUILD_DIR}/Procfile"
 
 if ! [ $? ]; then
