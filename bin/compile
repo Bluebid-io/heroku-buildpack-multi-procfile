@@ -21,6 +21,7 @@ if [[ -z "${PROCFILE}" ]]; then
 fi
 
 ls -l "${BUILD_DIR}"
+ls -l "${BUILD_DIR}/packages"
 
 echo "tmp: cp: ${BUILD_DIR}/${PROCFILE} -> ${BUILD_DIR}/Procfile" | indent
 cp "${BUILD_DIR}/${PROCFILE}" "${BUILD_DIR}/Procfile"
